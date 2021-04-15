@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.div<{ available: boolean }>`
   background: #f0f0f5;
   border-radius: 8px;
 
@@ -12,8 +12,8 @@ export const Container = styled.div`
     transition: 0.3s opacity;
     text-align: center;
 
-    ${props =>
-    !props.available &&
+    ${({ available }) =>
+    !available &&
     css`
         opacity: 0.3;
       `};
@@ -142,4 +142,4 @@ export const Container = styled.div`
       }
     }
   }
-`;
+`
